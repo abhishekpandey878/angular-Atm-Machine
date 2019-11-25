@@ -16,7 +16,7 @@ export class AppComponent  {
      //this.atmCardNum();
   }
 
-  //cardnum;
+  //cardnum = (/^[0-9]{16}$/);
 	correct_pass = (/^[0-9]{4}$/);
 	passTry = 3;
   currentBalance = 35000;
@@ -77,7 +77,7 @@ withdrawal() {
 				this.withdrawal();
 			}
 		} else {
-			alert("You must withdraw at least $1000");
+			alert("You must withdraw at least 1000");
 			this.withdrawal();
 		}
 	} else {
