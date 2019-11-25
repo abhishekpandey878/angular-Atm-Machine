@@ -19,7 +19,7 @@ export class AppComponent  {
   //cardnum = (/^[0-9]{16}$/);
 	correct_pass = (/^[0-9]{4}$/);
 	passTry = 3;
-  currentBalance = 35000;
+  currentBalance = 50000;
 
     // Input a Card Number
 atmCardNum() {
@@ -50,7 +50,7 @@ checkPassword(userInput) {
             } else {
 				this.passTry -= 1;
 				alert("Incorrect PIN. Please try again.");
-				alert("You have " + this.passTry + " chance/s to try");
+				alert("You have " + this.passTry + " chance to try");
             	this.atmPassword();
 			}
         }
@@ -59,7 +59,7 @@ checkPassword(userInput) {
 
 // Exit the ATM
 exit() {
-	alert("Thank you for patronising our ATM machine");
+	alert("Thank you for using our ATM machine");
 }
 
 withdrawalAmount;
@@ -70,7 +70,7 @@ withdrawal() {
 			if (this.withdrawalAmount <= this.currentBalance) {
 				this.currentBalance -= this.withdrawalAmount;
 				alert("Transaction successful!");
-				alert("Your remaining balance is $" + this.currentBalance);
+				alert("Your remaining balance is " + this.currentBalance);
 				this.toContinue();
 			} else {
 				alert("You do not have sufficient funds!");
@@ -89,13 +89,13 @@ withdrawal() {
 yesOrNo;
 // Does the user wish to continue using the ATM
 toContinue(){
-    let yesOrNo = parseInt(prompt("Do you want to perform another transaction? \n 1. Yes \n 2. No"));
-	if (this.yesOrNo !== "" && yesOrNo !== null) {
-    	if (yesOrNo === 2){
+    this.yesOrNo = parseInt(prompt("Do you want to perform another transaction? \n 1. Yes \n 2. No"));
+	if (this.yesOrNo !== "" && this.yesOrNo !== null) {
+    	if (this.yesOrNo === 2){
 			this.exit();
     	}
 		else {
-			this.atmCardNum(); 
+			this.withdrawal(); 
     	}
 	} else {
 		alert("Please make a valid selection");
