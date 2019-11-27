@@ -16,7 +16,6 @@ export class AppComponent  {
      //this.atmCardNum();
   }
 
-  //cardnum = (/^[0-9]{16}$/);
 	correct_pass = (/^[0-9]{4}$/);
 	passTry = 3;
   currentBalance = 50000;
@@ -36,7 +35,7 @@ atmPassword() {
 	let pswEntry = parseInt(prompt("Dear User, enter your 4 digit PIN"));
 	this.checkPassword(pswEntry);
 }
-// Verify Password meets requirements
+// Verify Password
 checkPassword(userInput) {
     if (this.correct_pass.test(userInput)){
         this.withdrawal();
@@ -87,7 +86,7 @@ withdrawal() {
 }
 
 yesOrNo;
-// Does the user wish to continue using the ATM
+// if user want to continue using the ATM
 toContinue(){
     this.yesOrNo = parseInt(prompt("Do you want to perform another transaction? \n 1. Yes \n 2. No"));
 	if (this.yesOrNo !== "" && this.yesOrNo !== null) {
@@ -104,3 +103,13 @@ toContinue(){
 }
 
 }
+
+/**
+ * Dear Sir/ma'am,
+ * I don't have laptop with me.
+ * so the task is done during office hour (Lunch, tea break
+ * & post office hour "1 hour").
+ * And I am having Office work and Two more task.
+ * So consider this task, And Consider me as a Fresher.
+ * Thank You
+ */
